@@ -3,9 +3,7 @@
     package="com.example.zhenru.myfaceid">
 
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-feature android:name="android.hardware.camera" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -29,7 +27,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CameraActivity" />
-        <activity android:name=".RecognitionActivity"></activity>
+        <activity android:name=".RecognitionActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".NameActivity"></activity>
     </application>
 
 </manifest>

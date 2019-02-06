@@ -19,6 +19,18 @@ public class MainActivity extends AppCompatActivity {
         final TextView textView=(TextView)findViewById(R.id.displayText);
         textView.setText("开始识别");
         Intent intent = new Intent(this, CameraActivity.class);
+        intent.putExtra("STATUS", "Recognition");
+        startActivity(intent);
+        startActivity(intent);
+        finish();
+    }
+
+    public void register(View view) {
+        // Do something in response to button
+        final TextView textView=(TextView)findViewById(R.id.displayText);
+        textView.setText("开始注册");
+        Intent intent = new Intent(this, CameraActivity.class);
+        intent.putExtra("STATUS", "Register");
         startActivity(intent);
         finish();
     }

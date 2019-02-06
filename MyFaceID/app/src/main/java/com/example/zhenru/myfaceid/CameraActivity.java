@@ -20,7 +20,7 @@ import java.io.IOException;
 import static android.content.ContentValues.TAG;
 
 public class CameraActivity extends AppCompatActivity {
-
+    private String status;
     private Camera mCamera;
     private CameraPreview mPreview;
     private Camera.PictureCallback mPicture = new Camera.PictureCallback() {
@@ -43,9 +43,16 @@ public class CameraActivity extends AppCompatActivity {
                 FileOutputStream fos = new FileOutputStream(pictureFile);
                 bitmap.compress(Bitmap.CompressFormat.JPEG,100, fos);
                 fos.close();
-                Intent intent = new Intent(CameraActivity.this, RecognitionActivity.class);
-                startActivity(intent);
-                finish();
+                if(status.equals("Recognition")) {
+                    Intent intent = new Intent(CameraActivity.this, RecognitionActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    Intent intent = new Intent(CameraActivity.this, NameActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             } catch (FileNotFoundException e) {
                 Log.d(TAG, "File not found: " + e.getMessage());
             } catch (IOException e) {
@@ -58,6 +65,9 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        Bundle extras = getIntent().getExtras();
+        status = extras.getString("STATUS");
+
         // Create an instance of Camera
         mCamera = getCameraInstance();
 

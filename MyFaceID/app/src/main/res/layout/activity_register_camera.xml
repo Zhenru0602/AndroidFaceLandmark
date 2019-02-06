@@ -4,13 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecognitionActivity">
+    tools:context=".RegisterCameraActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="293dp"
-        android:layout_height="94dp"
-        android:text="Recognition"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="174dp" />
 </android.support.constraint.ConstraintLayout>
